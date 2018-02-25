@@ -1,0 +1,38 @@
+.loading {
+    &__overlay {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        background-color: black;
+        
+        @include displayFlex;
+        @include justifyContentCenter;
+        @include alignItemsCenter;
+        
+        &--is-hidden {
+            display: none;
+        }
+    }
+    
+    &__logo {
+        border: 5px dashed white;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        
+        animation: spin 2s linear infinite forwards;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

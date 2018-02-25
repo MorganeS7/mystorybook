@@ -1,0 +1,96 @@
+.page {
+    background-color: #e0ddd8;
+    border-radius: 8px;
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 2px 2px 11px 0.5px black;
+}
+
+.pageRight {
+    transform-origin: 0 50%;
+    transition: transform 5s 1s ease-in-out;
+    margin-left: 1px;
+
+    position: absolute;
+}
+
+.pageLeft {
+    transform-origin: 100% 50%;
+    transition: transform 5s 1s ease-in-out;
+    margin-left: -1px;
+
+    position: absolute;
+}
+
+.is-rotated-right {
+    animation: rotation-right 2s ease-in-out forwards;
+}
+
+.is-rotated-right.cover {
+    animation: rotation-right-cover 2s ease-in-out forwards;
+    margin: 0;
+}
+
+.is-rotated-left {
+    animation: rotation-left 2s ease-in-out forwards;
+}
+
+.is-disappearing {
+    animation: disparition 1s ease-in-out forwards;
+}
+
+.is-appearing {
+    animation: apparition 1s ease-in-out forwards;
+}
+
+.link-is-appearing {
+    animation: linkApparition 1s ease-in-out forwards;
+}
+
+.link-is-disappearing {
+    animation: disparition 1s ease-in-out forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    opacity: 0;
+    z-index: -100;
+}
+
+@keyframes disparition {
+    100% {opacity: 0;}
+}
+
+@keyframes apparition {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes linkApparition {
+    0% {opacity: 0;}
+    100% {opacity: 0.8;}
+}
+
+@keyframes rotation-left {
+    from {z-index: 3000;}
+    to {z-index: 3000; transform: rotateY(180deg); margin-left: 0;}
+}
+
+@keyframes rotation-right {
+    from {z-index: 3000;}
+    to {z-index: 3000; transform: rotateY(-180deg); margin-left: 0;}
+}
+
+@keyframes rotation-right-cover {
+    0% {z-index: 3000;}
+    100% {z-index: 3000; transform: rotateY(-180deg); margin-left: 0; background-color: #e0ddd8; background-image: none;}
+}
